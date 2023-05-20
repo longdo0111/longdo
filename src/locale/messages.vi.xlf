@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="vi">
+    <body>
+      <trans-unit id="5674873534353682081" datatype="html">
+        <source>Filter by:</source>
+        <target>Loc boi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/products/product-list.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Filter by for product list</note>
+        <note priority="1" from="meaning">product filter</note>
+      </trans-unit>
+       <trans-unit id="7616770651914901276" datatype="html">
+        <source>Product</source>
+        <target>San pham</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/products/product-list.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7925441181590759818" datatype="html">
+        <source>Code</source>
+        <target>Ma</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/products/product-list.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">Table header</note>
+        <note priority="1" from="meaning">product</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
