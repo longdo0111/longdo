@@ -12,6 +12,7 @@
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
+          "en": {"translation": "src/locale/messages.en.xlf"},
           "vi": {"translation": "src/locale/messages.vi.xlf"}
         }
       },
@@ -39,6 +40,9 @@
           "configurations": {
             "vi": {
               "localize": ["vi"]
+            },
+            "en": {
+              "localize": ["en"]
             },
             "production": {
               "budgets": [
@@ -78,6 +82,9 @@
             "vi": {
               "browserTarget": "apm:build:development,vi"
             },
+            "en": {
+              "browserTarget": "apm:build:development,en"
+            },
             "production": {
               "browserTarget": "apm:build:production"
             },
@@ -85,7 +92,7 @@
               "browserTarget": "apm:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "en"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
