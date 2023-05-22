@@ -1,1 +1,6 @@
-<p>product-detail works!</p>
+<div class='card'>
+    <div class='card-header'>
+        {{ pageTitle + ': ' + product?.productName }}
+    </div>
+    <button class='btn btn-outline-secondary' style='width: 100px;' (click)='onBack()'><i class='fa fa-chevron-left'></i> Go back</button>
+</div>
