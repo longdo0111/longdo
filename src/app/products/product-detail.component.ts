@@ -1,35 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from './product';
+import { ProductService } from './product.service';
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'pm-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit, OnDestroy {
   pageTitle: string = 'Product detail component';
   product: IProduct | undefined;
+  messageError: string = '';
+  sub: Subscription | undefined;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) {   }
 
   ngOnInit(): void {
     const id = Number( this.route.snapshot.paramMap.get('id'));
-    this.pageTitle += `: ${id}`;
-    this.product = {
-      "productId": 5,
-      "productName": "Hammer",
-      "productCode": "TBX-0048",
-      "releaseDate": "May 21, 2021",
-      "description": "Curved claw steel hammer",
-      "price": 8.9,
-      "starRating": 4.8,
-      "imageUrl": "assets/images/hammer.png"
-    };
+    if(id) {
+      this.sub = this.getProduct(id);
+    }
+  }
+
+  getProduct(id: Number) {
+    return this.productService.getProductById(id).subscribe({
+      next: product => {
+        console.log("this product: " + JSON.stringify(product));
+        this.product = product;
+      },
+      error: err => this.messageError = err 
+    });
   }
 
   onBack(): void {
     this.router.navigate(['/products']);
+  }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
   }
 
 }
