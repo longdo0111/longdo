@@ -12,8 +12,12 @@
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
-          "en": {"translation": "src/locale/messages.en.xlf"},
-          "vi": {"translation": "src/locale/messages.vi.xlf"}
+          "en": {
+            "translation": "src/locale/messages.en.xlf"
+          },
+          "vi": {
+            "translation": "src/locale/messages.vi.xlf"
+          }
         }
       },
       "architect": {
@@ -39,10 +43,14 @@
           },
           "configurations": {
             "vi": {
-              "localize": ["vi"]
+              "localize": [
+                "vi"
+              ]
             },
             "en": {
-              "localize": ["en"]
+              "localize": [
+                "en"
+              ]
             },
             "production": {
               "budgets": [
